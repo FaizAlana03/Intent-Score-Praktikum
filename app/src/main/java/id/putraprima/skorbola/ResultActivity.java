@@ -16,6 +16,7 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
         result = findViewById(R.id.textView2);
         winner = findViewById(R.id.textView3);
+//        score = findViewById(R.id.textView4);
 
         Bundle extras = getIntent().getExtras();
         int homeResult = extras.getInt("homeScore");
@@ -24,7 +25,7 @@ public class ResultActivity extends AppCompatActivity {
         String awayName = extras.getString("awayName");
 
         if(extras != null ){
-            result.setText("Score Akhir : "+String.valueOf(homeResult) + " - " + String.valueOf(awayResult));
+            result.setText(String.valueOf(homeResult) + " - " + String.valueOf(awayResult));
             if(homeResult > awayResult){
                 winner.setText("Pemenangnya adalah tim "+homeName + " !");
             }else if(awayResult > homeResult){
